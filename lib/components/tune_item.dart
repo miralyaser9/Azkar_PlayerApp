@@ -16,22 +16,23 @@ class Tune_item extends StatelessWidget{
 
     return Expanded(
       child: Container(
+        color: tune.color,
         child: Center(child:
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               GestureDetector(
-                  onTap: (){tune.playSound();
+                  onTap: (){
+                    tune.playSound();
                   }
-                  ,child: Text(tune.text,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),))
+                  ,child: Text(tune.text,style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),))
               ,IconButton(onPressed: (){
                 tune.stopSound();
 
-              }, icon: Icon(Icons.stop,size: 40,))],),
+              }, icon: const Icon(Icons.stop,size: 40,))],),
         )
-        ),
-        color: tune.color,),
+        ),),
     );
   }
 
